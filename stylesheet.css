@@ -2,19 +2,25 @@
 
 #navbar {
     height: 100%;
-    width: 160px;
+    width: 260px;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    border-style: solid;
+    border-color: red;
     overflow-x: hidden;
     padding-top: 20px;
 }
 
 main {
-    margin-left: 160px; /* Same as the width of the sidenav */
-    padding: 0px 10px;
+    margin-left: 260px; /* Same as the width of the sidenav */
+    padding: 20px 20px;
+}
+
+
+#doc-title {
+	padding: 0.5rem 1rem;
 }
 
 @media screen and (max-height: 450px) {
