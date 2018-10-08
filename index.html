@@ -45,9 +45,9 @@
       <section class="main-section" id="Timestamps">
         <header class="h2">Timestamps</header>
         <p>All timestamps will default be RFC3339 / ATOM formatted, this is also the default input format.</p>
-        <code>require 'time'
-			now = Time.now
-			isoDate = now.rfc3339</code>
+        <pre><code>require 'time'
+now = Time.now
+isoDate = now.rfc3339</code></pre>
 		<p>You can also define the input and output timestamp formatting this these headers:</p>
 		<ul>
 			<li>Timekit-OutputTimestampFormat</li>
@@ -58,22 +58,22 @@
       <section class="main-section" id="App_authentication">
         <header class="h2">App authentication</header>
         <p>In Timekit, each of your apps has its own key which is used for authentication. You find this key in the Timekit admin under API Settings. API-Key authentication is different from normal basic authentication, in that there is no email/user-name value for the API-Key and so authentication only uses the key value as you would normally use the password.</p>
-        <code>curl --request GET \
+        <pre><code>curl --request GET \
   --url https://api.timekit.io/v2/bookings \
   --header 'Content-Type: application/json' \
-  --user :live_api_key_7nzvc7wsBQQISLeFSVhROys9V1bUJ1z7</code>
+  --user :live_api_key_7nzvc7wsBQQISLeFSVhROys9V1bUJ1z7</code></pre>
   		<p>If your API Key is <code>test_api_key_foobar</code> you must base64 encode <code>:test_api_key_foobar</code> which will result in the value <code>OnRlc3RfYXBpX2tleV9mb29iYXI=</code> This value is the one you must input for the Authorization header when using "Try It"</p>
       </section>
       <section class="main-section" id="Personal_authentication">
         <header class="h2">Personal authentication</header>
         <p>Use this endpoint at the beginning of your user's session when interacting with Timekit and store the returned api_token in the users session. The API is sessionless so you need to provide the api_token with each subsequent API request as the password part of basic http authentication. In order for personal authentication to work, you must also supply the "Timekit-App" header, with the value set to the slug of the app the user is requesting through.</p>
         <p>Authenticated personally also means that you will have to omit the resource_id parameter otherwise required where relevant. This parameter is to specify which resource should be booked etc, being personally authenticated makes this value redundant and so it should be omitted.</p>
-        <code>var xmlhttp = new XMLHttpRequest();
+        <pre><code>var xmlhttp = new XMLHttpRequest();
 xmlhttp.open("POST", "https://api.timekit.io/v2/findtime");
 xmlhttp.setRequestHeader("Content-Type", "application/json");
 xmlhttp.setRequestHeader("Timekit-App", "back-to-the-future");
 xmlhttp.setRequestHeader("Authorization", "Basic " + btoa("doc.brown@timekit.io:nvHfRSlhvsnlg4rS7Wt28Ty47qdgegwSu3YK7hPW"));
-xmlhttp.send('{"resource_ids": ["78a4d873-2a68-41c6-bdd4-c0ca5b35efd3"],"future": "2 days","length": "4 hours"}');</code>
+xmlhttp.send('{"resource_ids": ["78a4d873-2a68-41c6-bdd4-c0ca5b35efd3"],"future": "2 days","length": "4 hours"}');</code></pre>
       </section>
       <section class="main-section" id="Dynamic_includes">
         <header class="h2">Dynamic includes</header>
