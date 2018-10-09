@@ -32,21 +32,20 @@ pre {
 	border: solid rgb(240,240,240);
 	border-radius: 5px;
 	color: rgb(211,77,136);
+	padding: 0.8rem 0.8rem;
 }
 
-/*.code-xl {
-	display: block;
-    text-align: left;
-    white-space: pre;
-    position: relative;
-	overflow-wrap: break-word;
-    line-height: 2;
-    padding: 15px;
-    margin: 10px;
-}*/
-
-
-@media screen and (max-height: 450px) {
-    #navbar {padding-top: 15px;}
-    #navbar a {font-size: 180px;}
+@media only screen and (max-width: 450px) {
+    #navbar {
+    	position:absolute;
+    	width: 100%;
+    	max-height: 280px;
+    	border-bottom-style: solid;
+    	border-bottom-color: rgb(231,234,237);
+    }
+      #main-doc{
+	    position: relative;
+	    margin-left: 0px;
+	    margin-top: 280px;
+  }
 }
